@@ -1,0 +1,48 @@
+{
+  "name": "mma-api",
+  "version": "0.1.0",
+  "description": "mosaico music archive",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index",
+    "test": "mocha --recursive --exit './tests/{,!(integration)/**}/*.test.js'",
+    "test:coverage": "nyc npm test",
+    "lint": "eslint .",
+    "precommit": "npm test && eslint ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jonathasbsouza/mma-api.git"
+  },
+  "keywords": [
+    "mma",
+    "music",
+    "archive",
+    "tabs",
+    "cms"
+  ],
+  "author": "Mosaico",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jonathasbsouza/mma-api/issues"
+  },
+  "homepage": "https://github.com/jonathasbsouza/mma-api#readme",
+  "devDependencies": {
+    "eslint": "^5.4.0",
+    "husky": "^0.14.3",
+    "mocha": "^5.2.0",
+    "nyc": "^12.0.2"
+  },
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "chai": "^4.1.2",
+    "chai-http": "^4.0.0",
+    "cors": "^2.8.4",
+    "dotenv": "^6.0.0",
+    "express": "^4.16.3",
+    "rewiremock": "^3.7.7",
+    "sinon": "^6.1.5",
+    "supertest": "^3.1.0",
+    "winston": "^3.0.0"
+  }
+}
