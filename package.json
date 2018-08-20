@@ -6,6 +6,7 @@
   "scripts": {
     "start": "node index",
     "test": "mocha --recursive --exit './tests/{,!(integration)/**}/*.test.js'",
+    "test:integration": "mocha --recursive --exit './tests/integration/*.test.js'",
     "test:coverage": "nyc npm test",
     "lint": "eslint .",
     "precommit": "npm test && eslint ."
