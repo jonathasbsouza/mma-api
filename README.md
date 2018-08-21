@@ -37,7 +37,7 @@ Caso a variável ```PORT``` não seja especificada, aplicação utilizará a por
 #### **O deploy da aplicação na App Engine é automático e de responsabilidade do servidor de CI. O deploy manual deve ser evitado.**
 
 Caso seja necessário realizar o deploy diretamente da máquina local, execute:
-> gcloud app deploy --project mosa-ma
+> npm run deploy:gcloud
 
 *Atenção: É necessário ter instalada o SDK do Google Cloud Platform (gcloud)*
 
