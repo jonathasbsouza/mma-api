@@ -1,11 +1,11 @@
 swagger: '2.0'
 info:
-  description: This is a simple API
+  description: Mosaico Music Archive API
   version: 1.0.0
   title: Mosaico Music Archive
   # put the contact info for your development or API team
   contact:
-    email: you@your-company.com
+    email: caiosbouza@hotmail.com
 
   license:
     name: Apache 2.0
@@ -15,112 +15,99 @@ info:
 tags:
 - name: admins
   description: Secured Admin-only calls
-- name: developers
-  description: Operations available to regular developers
+- name: all users
+  description: Operations available to any signed in person
 
 paths:
-  /inventory:
+  /songs:
     get:
       tags:
-      - developers
-      summary: searches inventory
-      operationId: searchInventory
+      - all users
+      summary: return all songs
+      operationId: getSongs
       description: |
-        By passing in the appropriate options, you can search for
-        available inventory in the system
+        Return all songs on the store
       produces:
       - application/json
       parameters:
       - in: query
         name: searchString
-        description: pass an optional search string for looking up inventory
+        description: pass an optional search string for looking up song repository
         required: false
         type: string
-      - in: query
-        name: skip
-        description: number of records to skip for pagination
-        type: integer
-        format: int32
-        minimum: 0
-      - in: query
-        name: limit
-        description: maximum number of records to return
-        type: integer
-        format: int32
-        minimum: 0
-        maximum: 50
       responses:
         200:
-          description: search results matching criteria
+          description: results matching criteria
           schema:
             type: array
             items:
-              $ref: '#/definitions/InventoryItem'
+              $ref: '#/definitions/Song'
         400:
           description: bad input parameter
     post:
       tags:
       - admins
-      summary: adds an inventory item
-      operationId: addInventory
-      description: Adds an item to the system
+      summary: adds a song
+      operationId: addSong
+      description: Adds an song to the archive
       consumes:
       - application/json
       produces:
       - application/json
       parameters:
       - in: body
-        name: inventoryItem
-        description: Inventory item to add
+        name: song
+        description: Song item to add
         schema:
-          $ref: '#/definitions/InventoryItem'
+          $ref: '#/definitions/Song'
       responses:
         201:
-          description: item created
+          description: song created
         400:
           description: invalid input, object invalid
         409:
           description: an existing item already exists
 definitions:
-  InventoryItem:
+  Song:
     type: object
     required:
-    - id
-    - name
-    - manufacturer
+    - title
+    - artist
     - releaseDate
     properties:
       id:
         type: string
         format: uuid
-        example: d290f1ee-6c54-4b01-90e6-d701748f0851
-      name:
+        example: 507f1f77bcf86cd799439011
+      title:
         type: string
-        example: Widget Adapter
-      releaseDate:
-        type: string
-        format: int32
-        example: 2016-08-29T09:12:33.001Z
-      manufacturer:
-        $ref: '#/definitions/Manufacturer'
-  Manufacturer:
+        example: Das Auto
+      artist:
+        type: array
+        items:
+          $ref: '#/definitions/Artist'
+      tags:
+        type: array
+        items:
+          type: string
+        example: ['Worship', 'Happy']
+  Artist:
     required:
     - name
     properties:
+      id:
+        type: string
+        format: uuid
+        example: 507f1f77bcf86cd799439011
       name:
         type: string
-        example: ACME Corporation
-      homePage:
-        type: string
-        format: url
-        example:  https://www.acme-corp.com
-      phone:
-        type: string
-        example: 408-867-5309
+        example: Stevie Steven
 # Added by API Auto Mocking Plugin
 host: virtserver.swaggerhub.com
 # basePath: /caiosouza/MosaMusicArchive/1.0.0
 schemes:
  - https
 # Added by API Auto Mocking Plugin
-basePath: /caiosouza/MosaicoMusicArchive/1.0.0
+# basePath: /caiosouza/MosaicoMusicArchive/1.0.0
+# Added by API Auto Mocking Plugin
+basePath: /caiosouza/MosaMA/1.0.0
