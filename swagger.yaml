@@ -1,8 +1,8 @@
 swagger: '2.0'
 info:
-  description: This is an API
+  description: This is a simple API
   version: 1.0.0
-  title: Simple Inventory API
+  title: Mosaico Music Archive
   # put the contact info for your development or API team
   contact:
     email: you@your-company.com
@@ -119,6 +119,8 @@ definitions:
         example: 408-867-5309
 # Added by API Auto Mocking Plugin
 host: virtserver.swaggerhub.com
-basePath: /caiosouza/MosaMusicArchive/1.0.0
+# basePath: /caiosouza/MosaMusicArchive/1.0.0
 schemes:
  - https
+# Added by API Auto Mocking Plugin
+basePath: /caiosouza/MosaicoMusicArchive/1.0.0
