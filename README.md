@@ -1,13 +1,13 @@
 # MMA - Mosaico Music Archive
 [![Build Status](https://travis-ci.com/jonathasbsouza/mma-api.svg?token=HULTqRskSHZSyLHYssJK&branch=master)](https://travis-ci.com/jonathasbsouza/mma-api)
 ## Links
-|Detalhes|URL|
-|--------|---|
-|Endereço da API|https://mosa-ma.appspot.com/|
+|Detalhes            |URL                                                  |
+|--------------------|-----------------------------------------------------|
+|Endereço da API     |https://mosa-ma.appspot.com/                         |
 |Console Google Cloud|https://console.cloud.google.com/home?project=mosa-ma|
-|Travis CI|https://travis-ci.com/jonathasbsouza/mma-api|
-|SDK do Google Cloud|https://cloud.google.com/sdk/|
-|Travis CLI|https://github.com/travis-ci/travis.rb#installation|
+|Travis CI           |https://travis-ci.com/jonathasbsouza/mma-api         |
+|SDK do Google Cloud |https://cloud.google.com/sdk/                        |
+|Travis CLI          |https://github.com/travis-ci/travis.rb#installation  |
 
 ## Instalando dependências
 > $ npm install
