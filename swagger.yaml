@@ -104,8 +104,8 @@ paths:
       - application/json
       parameters:
       - in: body
-        name: artist
-        description: Artist item to add
+        name: song
+        description: Song item to add
         schema:
           $ref: '#/definitions/Artist'
       responses:
@@ -115,54 +115,7 @@ paths:
           description: invalid input, object invalid
         409:
           description: an existing item already exists
-  /setlists:
-    get:
-      tags:
-      - all users
-      summary: return all setlists
-      operationId: getSetlists
-      description: |
-        Return all setlists on the store
-      produces:
-      - application/json
-      parameters:
-      - in: query
-        name: searchString
-        description: pass an optional search string for looking up setlist repository
-        required: false
-        type: string
-      responses:
-        200:
-          description: results matching criteria
-          schema:
-            type: array
-            items:
-              $ref: '#/definitions/Artist'
-        400:
-          description: bad input parameter
-    post:
-      tags:
-      - admins
-      summary: creates a setlist
-      operationId: addSetlist
-      description: Adds a setlist to the archive
-      consumes:
-      - application/json
-      produces:
-      - application/json
-      parameters:
-      - in: body
-        name: setlist
-        description: Setlist item to add
-        schema:
-          $ref: '#/definitions/Setlist'
-      responses:
-        201:
-          description: artist created
-        400:
-          description: invalid input, object invalid
-        409:
-          description: an existing item already exists      
+      
       
 definitions:
   Song:
@@ -199,10 +152,10 @@ definitions:
       name:
         type: string
         example: Stevie Steven
-  Setlist:
-    required:
+  SongVersion:
+    required: 
     - name
-    - songs
+    - file
     properties:
       id:
         type: string
@@ -210,11 +163,19 @@ definitions:
         example: 507f1f77bcf86cd799439011
       name:
         type: string
-        example: 13.05.2018
-      songs:
-        type: array
-        items:
-          $ref: '#/definitions/Song'
+        example: Original
+      file:
+        type: string
+        format: url
+        example: https://s3.us-east-2.amazonaws.com/bucket/doc.pdf
+      createdAt:
+        type: string
+        format: ISODate
+        example: '1970-01-01T00:00:00+00:00'
+      authors:
+        type: string
+        example: Italo Sousa
+        
 # Added by API Auto Mocking Plugin
 host: virtserver.swaggerhub.com
 # basePath: /caiosouza/MosaMusicArchive/1.0.0
