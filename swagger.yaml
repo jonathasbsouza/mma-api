@@ -104,8 +104,8 @@ paths:
       - application/json
       parameters:
       - in: body
-        name: song
-        description: Song item to add
+        name: artist
+        description: Artist item to add
         schema:
           $ref: '#/definitions/Artist'
       responses:
@@ -115,7 +115,54 @@ paths:
           description: invalid input, object invalid
         409:
           description: an existing item already exists
-      
+  /setlists:
+    get:
+      tags:
+      - all users
+      summary: return all setlists
+      operationId: getSetlists
+      description: |
+        Return all setlists on the store
+      produces:
+      - application/json
+      parameters:
+      - in: query
+        name: searchString
+        description: pass an optional search string for looking up setlist repository
+        required: false
+        type: string
+      responses:
+        200:
+          description: results matching criteria
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Artist'
+        400:
+          description: bad input parameter
+    post:
+      tags:
+      - admins
+      summary: creates a setlist
+      operationId: addSetlist
+      description: Adds a setlist to the archive
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: body
+        name: setlist
+        description: Setlist item to add
+        schema:
+          $ref: '#/definitions/Setlist'
+      responses:
+        201:
+          description: artist created
+        400:
+          description: invalid input, object invalid
+        409:
+          description: an existing item already exists      
       
 definitions:
   Song:
@@ -152,6 +199,22 @@ definitions:
       name:
         type: string
         example: Stevie Steven
+  Setlist:
+    required:
+    - name
+    - songs
+    properties:
+      id:
+        type: string
+        format: uuid
+        example: 507f1f77bcf86cd799439011
+      name:
+        type: string
+        example: 13.05.2018
+      songs:
+        type: array
+        items:
+          $ref: '#/definitions/Song'
 # Added by API Auto Mocking Plugin
 host: virtserver.swaggerhub.com
 # basePath: /caiosouza/MosaMusicArchive/1.0.0
