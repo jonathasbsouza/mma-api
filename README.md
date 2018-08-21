@@ -1,4 +1,13 @@
 # MMA - Mosaico Music Archive
+## Links
+|Detalhes|URL|
+|--------|---|
+|Endereço da API|https://mosa-ma.appspot.com/|
+|Console Google Cloud|https://console.cloud.google.com/home?project=mosa-ma|
+|CI Status|TBA|
+|SDK do Google Cloud|https://cloud.google.com/sdk/|
+|Travis CLI|https://github.com/travis-ci/travis.rb#installation|
+
 ## Instalando dependências
 > $ npm install
 ## Executando testes:
@@ -22,6 +31,14 @@ Esteja atenta aos seguintes passos ao realizar o checkin do código no repositó
 ## Executando aplicação
 Caso a variável ```PORT``` não seja especificada, aplicação utilizará a porta **5001**.
 > $ npm start
+
+## Deploy manual
+#### **O deploy da aplicação na App Engine é automático e de responsabilidade do servidor de CI. O deploy manual deve ser evitado.**
+
+Caso seja necessário realizar o deploy diretamente da máquina local, execute:
+> gcloud app deploy --project mosa-ma
+
+*Atenção: É necessário ter instalada o SDK do Google Cloud Platform (gcloud)*
 
 ## Extensões úteis (VS Code)
 * [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
