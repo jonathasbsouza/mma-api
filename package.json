@@ -9,7 +9,9 @@
     "test:integration": "mocha --recursive --exit './tests/integration/*.test.js'",
     "test:coverage": "nyc npm test",
     "lint": "eslint .",
-    "precommit": "npm test && eslint ."
+    "precommit": "npm test && eslint .",
+    "deploy:gcloud": "gcloud app deploy --project mosa-ma",
+    "deploy:encrypt-key": "travis encrypt-file gae.json --add"
   },
   "repository": {
     "type": "git",

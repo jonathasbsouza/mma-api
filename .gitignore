@@ -1,3 +1,8 @@
+# node modules folder
 node_modules/
+# istambul test coverage output folder
 .nyc_output/
+# environment variables
 .env
+# google's app engine service account key
+gae.json
