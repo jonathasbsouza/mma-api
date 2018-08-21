@@ -67,6 +67,56 @@ paths:
           description: invalid input, object invalid
         409:
           description: an existing item already exists
+  /artists:
+    get:
+      tags:
+      - all users
+      summary: return all artists
+      operationId: getArtists
+      description: |
+        Return all artists on the store
+      produces:
+      - application/json
+      parameters:
+      - in: query
+        name: searchString
+        description: pass an optional search string for looking up song repository
+        required: false
+        type: string
+      responses:
+        200:
+          description: results matching criteria
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Artist'
+        400:
+          description: bad input parameter
+    post:
+      tags:
+      - admins
+      summary: adds an artist
+      operationId: addArtist
+      description: Adds an artist to the archive
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: body
+        name: song
+        description: Song item to add
+        schema:
+          $ref: '#/definitions/Artist'
+      responses:
+        201:
+          description: artist created
+        400:
+          description: invalid input, object invalid
+        409:
+          description: an existing item already exists
+      
+      
 definitions:
   Song:
     type: object
