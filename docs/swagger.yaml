@@ -123,7 +123,6 @@ definitions:
     required:
     - title
     - artist
-    - releaseDate
     properties:
       id:
         type: string
@@ -152,36 +151,31 @@ definitions:
       name:
         type: string
         example: Stevie Steven
-  SongVersion:
-    required: 
-    - name
-    - file
-    properties:
-      id:
-        type: string
-        format: uuid
-        example: 507f1f77bcf86cd799439011
-      name:
-        type: string
-        example: Original
-      file:
-        type: string
-        format: url
-        example: https://s3.us-east-2.amazonaws.com/bucket/doc.pdf
-      createdAt:
-        type: string
-        format: ISODate
-        example: '1970-01-01T00:00:00+00:00'
-      authors:
-        type: string
-        example: Italo Sousa
-        
-# Added by API Auto Mocking Plugin
-host: virtserver.swaggerhub.com
-# basePath: /caiosouza/MosaMusicArchive/1.0.0
+  # SongVersion:
+  #   required: 
+  #   - name
+  #   - file
+  #   properties:
+  #     id:
+  #       type: string
+  #       format: uuid
+  #       example: 507f1f77bcf86cd799439011
+  #     name:
+  #       type: string
+  #       example: Original
+  #     file:
+  #       type: string
+  #       format: url
+  #       example: https://s3.us-east-2.amazonaws.com/bucket/doc.pdf
+  #     createdAt:
+  #       type: string
+  #       format: ISODate
+  #       example: '1970-01-01T00:00:00+00:00'
+  #     authors:
+  #       type: string
+  #       example: Italo Sousa
+
+host: mosa-ma.appspot.com
 schemes:
  - https
-# Added by API Auto Mocking Plugin
-# basePath: /caiosouza/MosaicoMusicArchive/1.0.0
-# Added by API Auto Mocking Plugin
-basePath: /caiosouza/MosaMA/1.0.0
+basePath: /

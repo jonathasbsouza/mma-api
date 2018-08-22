@@ -1,5 +1,6 @@
 const cors = require('cors');
 const bodyParser = require('body-parser');
+const swagger = require('./middlewares/swagger.middleware');
 
 module.exports = (app) => {
     app.use(cors());
@@ -7,4 +8,5 @@ module.exports = (app) => {
         extended: false
     }));
     app.use(bodyParser.json());
+    swagger(app);
 };

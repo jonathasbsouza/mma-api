@@ -1,12 +1,12 @@
 # MMA - Mosaico Music Archive
 [![Build Status](https://travis-ci.com/jonathasbsouza/mma-api.svg?token=HULTqRskSHZSyLHYssJK&branch=master)](https://travis-ci.com/jonathasbsouza/mma-api)
 ## Links
-|Detalhes            |URL                                                          |
-|--------------------|-------------------------------------------------------------|
+|Detalhes                   |URL                                                   |
+|---------------------------|------------------------------------------------------|
 |Endereço da API            |https://mosa-ma.appspot.com/                          |
 |Console Google Cloud       |https://console.cloud.google.com/home?project=mosa-ma |
 |Travis CI                  |https://travis-ci.com/jonathasbsouza/mma-api          |
-|API Documentation (Swagger)|https://app.swaggerhub.com/apis/caiosouza/MosaMA/1.0.0|
+|API Documentation (Swagger)|https://mosa-ma.appspot.com/docs                      |
 |SDK do Google Cloud        |https://cloud.google.com/sdk/                         |
 |Travis CLI                 |https://github.com/travis-ci/travis.rb#installation   |
 
@@ -41,6 +41,11 @@ Caso seja necessário realizar o deploy diretamente da máquina local, execute:
 > npm run deploy:gcloud
 
 *Atenção: É necessário ter instalada o SDK do Google Cloud Platform (gcloud)*
+
+## Documentação
+Utilizamos o Swagger para prototipar/documentar a API. A documentação pode ser acessada através da rota ```/docs```, tanto localmente (```localhost:5001/docs```) quanto em [produção](https://mosa-ma.appspot.com/docs). 
+
+Para alterar o schema da documentação, edite o arquivo ```docs/swagger.yaml```. Para mais informações acerca do padrão OpenAPI, visite a [documentação oficial](https://swagger.io/docs/specification/basic-structure/).
 
 ## Extensões úteis (VS Code)
 * [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
