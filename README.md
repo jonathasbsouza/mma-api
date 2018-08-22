@@ -1,5 +1,6 @@
 # MMA - Mosaico Music Archive
 [![Build Status](https://travis-ci.com/jonathasbsouza/mma-api.svg?token=HULTqRskSHZSyLHYssJK&branch=master)](https://travis-ci.com/jonathasbsouza/mma-api)
+[![Dependencies status](https://david-dm.org/jonathasbsouza/mma-api.svg)](https://david-dm.org/jonathasbsouza/mma-api)
 ## Links
 |Detalhes                   |URL                                                   |
 |---------------------------|------------------------------------------------------|
